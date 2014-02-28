@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :character_id %><br>
-    <%= f.number_field :character_id %>
+    <%= f.select(:character_id,options_from_collection_for_select(Character.all, :id, :name)) %>
   </div>
   <div class="actions">
     <%= f.submit %>

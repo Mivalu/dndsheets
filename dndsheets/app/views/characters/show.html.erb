@@ -15,5 +15,14 @@
   <%= @character.race %>
 </p>
 
+<p>
+	<strong><%= @character.name %>'s Stuff</strong>
+    <% @character.equips.each do |equip| %>
+	<%= equip.name %>
+	<%= equip.desc %>
+	<% end %>
+
+</p>
+<%= link_to 'Give Stuff', new_equip_path %><br />
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>
