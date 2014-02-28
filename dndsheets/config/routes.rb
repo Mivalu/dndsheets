@@ -1,4 +1,6 @@
 Dndsheets::Application.routes.draw do
+  resources :equips
+
   resources :characters
 
   # The priority is based upon order of creation: first created -> highest priority.
