@@ -23,6 +23,10 @@
     <%= f.label :race %><br>
     <%= f.text_field :race %>
   </div>
+  <div class="field">
+    <%= f.label :job %><br>
+    <%= f.select(:job, Job.all, include_blank:true) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

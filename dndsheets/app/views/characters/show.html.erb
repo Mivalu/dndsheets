@@ -16,6 +16,11 @@
 </p>
 
 <p>
+	<strong>Job:</strong>
+	<%= @character.job %>
+</p>
+
+<p>
 	<strong><%= @character.name %>'s Stuff</strong>
     <% @character.equips.each do |equip| %>
 	<%= equip.name %>
