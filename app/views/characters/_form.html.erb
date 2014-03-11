@@ -27,6 +27,19 @@
     <%= f.label :job %><br>
     <%= f.select(:job, Job.all, include_blank:true) %>
   </div>
+  <div class="field">
+    <%= f.label :init %><br>
+    <%= f.number_field :init %>
+  </div>
+  <div class="field">
+    <%= f.label :ac %><br>
+    <%= f.text_field :ac %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br>
+    <%= f.text_field :speed %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

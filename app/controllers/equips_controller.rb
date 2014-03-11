@@ -69,6 +69,6 @@ class EquipsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equip_params
-      params.require(:equip).permit(:name, :desc, :character_id)
+      params.require(:equip).permit(:name, :desc, :character_id, :qty)
     end
 end

@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<div class="name">
   <strong>Name:</strong>
   <%= @character.name %>
-</p>
+</div>
 
 <p>
   <strong>Level:</strong>
@@ -21,13 +21,32 @@
 </p>
 
 <p>
-	<strong><%= @character.name %>'s Stuff</strong>
-    <% @character.equips.each do |equip| %>
-	<%= equip.name %>
-	<%= equip.desc %>
-	<% end %>
-
+  <strong>Initiative:</strong>
+  <%= @character.init %>
 </p>
-<%= link_to 'Give Stuff', new_equip_path %><br />
+
+<p>
+  <strong>Armor Class:</strong>
+  <%= @character.ac %>
+</p>
+
+<p>
+  <strong>Speed:</strong>
+  <%= @character.speed %>
+</p>
+
+<p>
+	<strong><%= @character.name %>'s Stuff</strong><br>
+  <ul>
+  <% @character.equips.each do |equip| %>
+	 <li><%= equip.name %><br> 
+    <% if equip.qty != nil %>Qty: <%= equip.qty %>
+    <% else %>Qty: 1<% end %>
+    | 
+	 <%= equip.desc %></li>
+	<% end %>
+  </ul>
+</p>
+<%= link_to 'Give Equipment', new_equip_path %><br />
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>

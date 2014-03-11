@@ -20,6 +20,10 @@
     <%= f.text_field :desc %>
   </div>
   <div class="field">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <div class="field">
     <%= f.label :character_id %><br>
     <%= f.select(:character_id,options_from_collection_for_select(Character.all, :id, :name)) %>
   </div>
