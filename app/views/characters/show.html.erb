@@ -1,42 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<div class="name">
+<div class="character name">
   <strong>Name:</strong>
   <%= @character.name %>
 </div>
 
-<p>
-  <strong>Level:</strong>
-  <%= @character.level %>
-</p>
+<div class="character subhead">
+  <%= @character.race %> <%= @character.job %>
+</div>
 
-<p>
-  <strong>Race:</strong>
-  <%= @character.race %>
-</p>
+<div class="character subhead">
+  Level <%= @character.level %>
+</div>
 
+<table class="attribute">
+  <tr>
+    <th>Attr</th>
+    <th>Score</th>
+  </tr>
+  <tr>
+    <td>Init</td>
+    <td><%= @character.init %></td>
+  </tr>
+  <tr>
+    <td>AC</td>
+    <td><%= @character.ac %></td>
+  </tr>  
+  <tr>
+    <td>SPD</td>
+    <td><%= @character.speed %></td>
+  </tr> 
+</table>
+<br>
 <p>
-	<strong>Job:</strong>
-	<%= @character.job %>
-</p>
-
-<p>
-  <strong>Initiative:</strong>
-  <%= @character.init %>
-</p>
-
-<p>
-  <strong>Armor Class:</strong>
-  <%= @character.ac %>
-</p>
-
-<p>
-  <strong>Speed:</strong>
-  <%= @character.speed %>
-</p>
-
-<p>
-	<strong><%= @character.name %>'s Stuff</strong><br>
+	<strong><%= @character.name %>'s Equipment</strong><br>
   <ul>
   <% @character.equips.each do |equip| %>
 	 <li><%= equip.name %><br> 
@@ -47,6 +44,9 @@
 	<% end %>
   </ul>
 </p>
+<br>
+<div class="links hideonprint">
 <%= link_to 'Give Equipment', new_equip_path %><br />
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>
+</div>

@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :race %><br>
-    <%= f.text_field :race %>
+    <%= f.select(:race, Race.all, include_blank:true) %>
   </div>
   <div class="field">
     <%= f.label :job %><br>
