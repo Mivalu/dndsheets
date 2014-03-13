@@ -4,12 +4,30 @@
   <title>DND Character Sheet Generator</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'stylesheet.css', :media => 'screen' %>
 </head>
 <body>
+	
+	<div class="hero-unit">
+		<h2>D&D Character Sheet Creator</h2>	
+		Suck my dick.
+  	</div>
+  		
 
-<%= yield %>
+<div class="container">
+	<div class="row">
+		<div class="span6">
+			<%= yield %>
+		</div>
+		<div class="span4">
+			<b>About This:</b><br>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non massa pulvinar, rutrum enim a, laoreet eros. Duis ut cursus purus. Integer ac tincidunt nibh. Aenean pharetra tempus turpis, id commodo tortor hendrerit ut. Quisque mattis tincidunt lacinia. Mauris tempor, dolor at condimentum rhoncus, velit mi auctor massa, at tristique purus libero eget nisl. Etiam nunc nulla, pellentesque ac nisi eget, molestie blandit odio. 
+		</div>
+	</div>
+</div>
 
 <br /><%= link_to 'Index', root_path %> | By Michele. 
 </body>

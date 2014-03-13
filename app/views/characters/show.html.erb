@@ -12,8 +12,8 @@
 <div class="character subhead">
   Level <%= @character.level %>
 </div>
-
-<table class="attribute">
+<div class="attribute">
+<table class="table table-bordered">
   <tr>
     <th>Attr</th>
     <th>Score</th>
@@ -31,18 +31,20 @@
     <td><%= @character.speed %></td>
   </tr> 
 </table>
+</div>
 <br>
 <p>
 	<strong><%= @character.name %>'s Equipment</strong><br>
-  <ul>
+  <dl>
   <% @character.equips.each do |equip| %>
-	 <li><%= equip.name %><br> 
+	 <dt><%= equip.name %></dt>
+   <dd> 
     <% if equip.qty != nil %>Qty: <%= equip.qty %>
     <% else %>Qty: 1<% end %>
     | 
-	 <%= equip.desc %></li>
+	 <%= equip.desc %></dd>
 	<% end %>
-  </ul>
+  </dl>
 </p>
 <br>
 <div class="links hideonprint">
