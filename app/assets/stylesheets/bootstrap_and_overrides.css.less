@@ -1,5 +1,4 @@
 @import "twitter/bootstrap/bootstrap";
-body { padding-top: 60px; }
 @import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
@@ -30,23 +29,28 @@ body { padding-top: 60px; }
 // Example:
 // @linkColor: #ff0000;
 
-body {background-color:white;}
-.character {}
+
 .name {
 	color:red;
+	font-size: 20px;
 }
-.subhead {
-	float:inline;
+td {
+	width: 49%;
 }
-.attribute {
-	width: 150px;
+@media print {
+	.hideonprint { display:none; }
+	.name { font-weight: 24px; color: black;}
+	.span3 {display: inline-block; width:45%;vertical-align:top;}	
+	div>table {margin-top:0px;display:inline-block;width:45%;}
+	div {border:1px solid;padding:5px;}
 }
-.links {
-
+table {
+	width:300px;
+	table-layout:fixed;
 }
-.hideonprint {
-
+th, td {
+	width:73px;
 }
-.hero-unit {
-
+.space {
+	width: 8px;
 }

@@ -1,54 +1,215 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
 
-<div class="character name">
-  <strong>Name:</strong>
-  <%= @character.name %>
-</div>
-
-<div class="character subhead">
-  <%= @character.race %> <%= @character.job %>
+<div class="row">
+  <div class="name span4">
+    <strong><%= @character.name %></strong>
+  </div>
 </div>
 
-<div class="character subhead">
-  Level <%= @character.level %>
+<div class="row">
+  <div class="span3 character border">
+    <%= @character.race %> <%= @character.job %>
+  </div>
+  <div class="span3 text-right">
+    Level <%= @character.level %>
+  </div>
 </div>
-<div class="attribute">
-<table class="table table-bordered">
-  <tr>
-    <th>Attr</th>
-    <th>Score</th>
-  </tr>
-  <tr>
-    <td>Init</td>
-    <td><%= @character.init %></td>
-  </tr>
-  <tr>
-    <td>AC</td>
-    <td><%= @character.ac %></td>
-  </tr>  
-  <tr>
-    <td>SPD</td>
-    <td><%= @character.speed %></td>
-  </tr> 
-</table>
+<div class="hidden-print">
+<div class="row">
+  <div class="span1 offset1">Full HP</div>
+  <div class="span1">Bloodied</div>
+  <div class="span1 offset1">Surge Value</div>
+  <div class="span1">Surges/Day</div>
 </div>
+<div class="row">
+  <div class="span1 offset1">#</div>
+  <div class="span1">#</div>
+  <div class="span1 offset1">#</div>
+  <div class="span1">#</div>
+</div>
+</div>
+
 <br>
+<div class="row">
+  <div class="span3">
+    <table class="table table-bordered table-striped table-condensed visible-print">
+      <tr>
+        <th>HP</th>
+        <th>#</th>
+      </tr>
+      <tr>
+        <td>Full</td>
+        <td>#</td>
+      </tr>
+      <tr>
+        <td>Bloodied</td>
+        <td>#</td>
+      </tr>  
+      <tr>
+        <td>Surge Value</td>
+        <td>#</td>
+      </tr> 
+      <tr>
+        <td>Surges/Day</td>
+        <td>#</td>
+      </tr> 
+    </table><br>
 <p>
-	<strong><%= @character.name %>'s Equipment</strong><br>
+  <strong><%= @character.name %>'s Equipment</strong><br>
   <dl>
   <% @character.equips.each do |equip| %>
-	 <dt><%= equip.name %></dt>
+   <dt><%= equip.name %></dt>
    <dd> 
     <% if equip.qty != nil %>Qty: <%= equip.qty %>
-    <% else %>Qty: 1<% end %>
-    | 
-	 <%= equip.desc %></dd>
-	<% end %>
+    <% else %>Qty: 1<% end %> | <%= equip.desc %></dd>
+  <% end %>
   </dl>
 </p>
+
+  </div>
+
+  <div class="attribute span3">
+      <table class="table table-bordered table-striped table-condensed">
+      <tr>
+        <th>Attr</th>
+        <th>Score</th>
+        <th class="space"></th>
+        <th>Attr</th>
+        <th>Score</th>
+      </tr>
+      <tr>
+        <td>Initiative</td>
+        <td><%= @character.init %></td>
+        <td class="space"></td>
+        <td>AC</td>
+        <td><%= @character.ac %></td>
+      </tr> 
+      <tr>
+        <td>STR</td>
+        <td>#</td>
+        <td class="space"></td>
+        <td>Speed</td>
+        <td><%= @character.speed %></td>
+      </tr> 
+      <tr>
+        <td>CON</td>
+        <td>#</td>
+        <td class="space"></td>
+        <td>FORT</td>
+        <td>#</td>
+      </tr>
+      <tr>
+        <td>DEX</td>
+        <td>#</td>
+        <td class="space"></td>
+        <td>REF</td>
+        <td>#</td>
+      </tr> 
+      <tr>
+        <td>INT</td>
+        <td>#</td>
+        <td class="space"></td>
+        <td>WILL</td>
+        <td>#</td>
+      </tr>
+      <tr>
+        <td>WIS</td>
+        <td>#</td>
+        <td class="space"></td>
+        <td></td>
+        <td></td>
+      </tr> 
+      <tr>
+        <td>CHA</td>
+        <td>#</td>
+        <td class="space"></td>
+        <td></td>
+        <td></td>
+      </tr> 
+    </table>
+
+  <table class="table table-bordered table-striped table-condensed border">
+    <tr>
+      <th>Skill</th>
+      <th>Score</th>
+      <th class="space"></th>
+      <th>Skill</th>
+      <th>Score</th>
+    </tr>
+    <tr>
+      <td>Acrobatics</td>
+      <td>#</td>
+      <td class="space"></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Arcana</td>
+      <td>#</td>
+      <td class="space"></td>
+      <td>Insight</td>
+      <td>#</td>
+    </tr>  
+    <tr>
+      <td>Athletics</td>
+      <td>#</td>
+      <td class="space"></td>
+      <td>Intimidate</td>
+      <td>#</td>
+    </tr>
+    <tr>
+       <td>Bluff</td>
+       <td>#</td>
+       <td class="space"></td>
+       <td>Nature</td>
+       <td>#</td>
+    </tr> 
+    <tr>
+       <td>Diplomacy</td>
+       <td>#</td>
+       <td class="space"></td>
+       <td>Perception</td>
+       <td>#</td>
+    </tr>
+    <tr>
+       <td>Dungeoneer</td>
+       <td>#</td>
+       <td class="space"></td>
+       <td>Religion</td>
+       <td>#</td>
+    </tr>
+    <tr>
+       <td>Endurance</td>
+       <td>#</td>
+       <td class="space"></td>
+       <td>Stealth</td>
+       <td>#</td>
+    </tr>
+    <tr>
+       <td>Heal</td>
+       <td>#</td>
+       <td class="space"></td>
+       <td>Streetwise</td>
+       <td>#</td>
+    </tr>
+    <tr>
+       <td>History</td>
+       <td>#</td>
+       <td class="space"></td>
+       <td>Thievery</td>
+       <td></td>
+    </tr>
+  </table>
+  </div>
+</div>
 <br>
-<div class="links hideonprint">
+</div>
+<br>
+<div class="row">
+<div class="span8 hideonprint">
 <%= link_to 'Give Equipment', new_equip_path %><br />
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>
+</div>
 </div>
