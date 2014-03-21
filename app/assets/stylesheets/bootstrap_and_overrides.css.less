@@ -1,6 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
+@media screen {
 @import "twitter/bootstrap/responsive";
-
+}
 // Set the correct sprite paths
 @iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
 @iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
@@ -38,11 +39,7 @@ td {
 	width: 49%;
 }
 @media print {
-	.hideonprint { display:none; }
-	.name { font-weight: 24px; color: black;}
-	.span3 {display: inline-block; width:45%;vertical-align:top;}	
-	div>table {margin-top:0px;display:inline-block;width:45%;}
-	div {border:1px solid;padding:5px;}
+	.hidden-print {display:none !important;}
 }
 table {
 	width:250px;

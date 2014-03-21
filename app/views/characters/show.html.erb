@@ -1,38 +1,36 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
+<div class="container-fluid">
 
-<div class="row">
-  <div class="name span4">
+<div class="row-fluid">
+  <div class="name span10">
     <strong><%= @character.name %></strong>
   </div>
 </div>
 
-<div class="row">
+<div class="row-fluid">
   <div class="span3 character border">
     <%= @character.race %> <%= @character.job %>
   </div>
-  <div class="span3 text-right">
+  <div class="span3 offset3 text-right">
     Level <%= @character.level %>
   </div>
 </div>
-<div class="hidden-print">
-<div class="row">
-  <div class="span1 offset1">Full HP</div>
-  <div class="span1">Bloodied</div>
-  <div class="span1 offset1">Surge Value</div>
-  <div class="span1">Surges/Day</div>
-</div>
-<div class="row">
-  <div class="span1 offset1">#</div>
+<div class="row hidden-print">
+  <div class="span2 offset1">Full HP</div>
   <div class="span1">#</div>
-  <div class="span1 offset1">#</div>
+  <div class="span2 offset1">Surge Value</div>
   <div class="span1">#</div>
 </div>
+<div class="row hidden-print">
+  <div class="span2 offset1">Bloodied</div>
+  <div class="span1">#</div>
+  <div class="span2 offset1">Surges/Day</div>
+  <div class="span1">#</div>
 </div>
 
 <br>
-<div class="row">
-  <div class="span3">
+<div class="row-fluid">
+  <div class="span4">
     <table class="table table-bordered table-striped table-condensed visible-print">
       <tr>
         <th>HP</th>
@@ -55,21 +53,20 @@
         <td>#</td>
       </tr> 
     </table><br>
-<p>
-  <strong><%= @character.name %>'s Equipment</strong><br>
-  <dl>
-  <% @character.equips.each do |equip| %>
-   <dt><%= equip.name %></dt>
-   <dd> 
-    <% if equip.qty != nil %>Qty: <%= equip.qty %>
-    <% else %>Qty: 1<% end %> | <%= equip.desc %></dd>
-  <% end %>
-  </dl>
-</p>
-
+    <p>
+      <strong><%= @character.name %>'s Equipment</strong><br>
+      <dl>
+      <% @character.equips.each do |equip| %>
+       <dt><%= equip.name %></dt>
+       <dd> 
+        <% if equip.qty != nil %>Qty: <%= equip.qty %>
+        <% else %>Qty: 1<% end %> | <%= equip.desc %></dd>
+      <% end %>
+      </dl>
+    </p>
   </div>
 
-  <div class="attribute span3">
+  <div class="span5">
       <table class="table table-bordered table-striped table-condensed">
       <tr>
         <th>Attr</th>
@@ -173,7 +170,7 @@
        <td>#</td>
     </tr>
     <tr>
-       <td>Dungeoneer</td>
+       <td>Dungeon</td>
        <td>#</td>
        <td class="space"></td>
        <td>Religion</td>
@@ -206,8 +203,8 @@
 <br>
 </div>
 <br>
-<div class="row">
-<div class="span8 hideonprint">
+<div class="row-fluid">
+<div class="span8 hidden-print">
 <%= link_to 'Give Equipment', new_equip_path %><br />
 <%= link_to 'Edit', edit_character_path(@character) %> |
 <%= link_to 'Back', characters_path %>
